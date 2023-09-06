@@ -12,7 +12,8 @@ class ExpenseModel {
   String date;
 
   ExpenseModel(
-      {this.exp_id,
+      {
+        this.exp_id,
       required this.uid,
       required this.exp_title,
       required this.exp_desc,

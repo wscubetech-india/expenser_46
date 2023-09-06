@@ -23,6 +23,7 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
   List<String> arrTransactionType = ['Debit', 'Credit'];
   String selectedTransactionType = 'Debit';
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,14 +34,18 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
+                decoration: InputDecoration(hintText: "Title"),
                 controller: titleController,
               ),
               TextField(
+                decoration: InputDecoration(hintText: "desc"),
                 controller: descController,
               ),
               TextField(
+                decoration: InputDecoration(hintText: "amo"),
                 controller: amtController,
               ),
+
               hSpacer(),
               SizedBox(
                 width: double.infinity,
@@ -131,7 +136,8 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
                             exp_desc: descController.text.toString(),
                             exp_amt: int.parse(amtController.text.toString()),
                             exp_bal: 0,
-                            cat_id: int.parse(AppConstants.categories[selectedCat]['id']),
+                            cat_id: int.parse(
+                                AppConstants.categories[selectedCat]['id']),
                             exp_type:
                                 selectedTransactionType == 'Debit' ? 0 : 1,
                             date: DateTime.now().toString())));
